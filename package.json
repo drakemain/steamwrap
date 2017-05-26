@@ -1,0 +1,12 @@
+{
+  "name": "steamwrap",
+  "version": "0.0.1",
+  "description": "Steam API wrapper for Node.js",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "author": "Drake Main",
+  "license": "ISC"
+}
