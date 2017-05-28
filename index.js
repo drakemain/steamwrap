@@ -1,11 +1,13 @@
-module.exports.SetSteamKey = require('./src/init');
+var ISteamUserStats = require('./interfaces/ISteamUserStats');
+var ISteamNews      = require('./interfaces/ISteamNews');
+var ISteamUser      = require('./interfaces/ISteamUser');
 
-module.exports.AppNews = require('./interfaces/AppNews');
+module.exports.SetKey = require('./src/init');
 
-module.exports.AppAchievements = require('./interfaces/AppAchievements');
+module.exports.GetGlobalStatsForGame = ISteamUserStats.GetGlobalStatsForGame;
+module.exports.GetGlobalAchievementPercentagesForApp = ISteamUserStats.GetGlobalAchievementPercentagesForApp;
 
-module.exports.AppStats = require('./interfaces/AppStats');
+module.exports.GetNewsForApp = ISteamNews.GetNewsForApp;
 
-module.exports.PlayerSummaries = require('./interfaces/PlayerSummaries');
-
-module.exports.FriendList = require('./interfaces/GetFriendList');
+module.exports.GetFriendList = ISteamUser.GetFriendList;
+module.exports.GetPlayerSummaries = ISteamUser.GetPlayerSummaries;

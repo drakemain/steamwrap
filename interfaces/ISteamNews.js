@@ -1,15 +1,16 @@
 var call = require('../src/call');
 
-var url = "http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/";
+var url = "http://api.steampowered.com/ISteamNews/";
 
-module.exports = function(appid, feedRequestParams, callback) {
+module.exports.GetNewsForApp = function(appid, feedRequestParams, callback) {
   if (typeof(feedRequestParams) == 'function') {
     callback = feedRequestParams;
 
     feedRequestParams = {count:3, maxlength:300, format:'JSON'}
   }
 
-  url += "?appid=" + appid
+  url += "GetNewsForApp/v0002/"
+    + "?appid=" + appid
     + "&count=" + feedRequestParams.count
     + "&maxlength=" + feedRequestParams.maxlength
     + "&format=" + feedRequestParams.format;
