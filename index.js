@@ -11,3 +11,4 @@ module.exports.GetNewsForApp = ISteamNews.GetNewsForApp;
 
 module.exports.GetFriendList = ISteamUser.GetFriendList;
 module.exports.GetPlayerSummaries = ISteamUser.GetPlayerSummaries;
+module.exports.GetPlayerBans = ISteamUser.GetPlayerBans;

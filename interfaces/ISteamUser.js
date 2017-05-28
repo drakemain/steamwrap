@@ -40,3 +40,21 @@ module.exports.GetPlayerSummaries = function(steamidArray, format, callback) {
 
   .then(callback);
 }
+
+module.exports.GetPlayerBans = function(steamidArray, callback) {
+  url += 'GetPlayerBans/v1/'
+    + '?key=' + process.env.STEAM_API_KEY
+    + '&steamids=';
+
+  for (var i = 0; i < steamidArray.length; i++) {
+    url += steamidArray[i];
+
+    if (i < steamidArray.length - 1) {
+      url += ',';
+    }
+  }
+
+  call(url)
+
+  .then(callback);
+}
