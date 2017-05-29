@@ -25,7 +25,7 @@ module.exports.GetGlobalStatsForGame = function(appid, format, statsArr, callbac
 }
 
 module.exports.GetGlobalAchievementPercentagesForApp = function(appid, format, callback) {
-  if(typeof(format) === 'function') {
+  if (typeof(format) === 'function') {
     callback = format;
     format = 'JSON';
   }
@@ -37,4 +37,54 @@ module.exports.GetGlobalAchievementPercentagesForApp = function(appid, format, c
   call(url)
 
   .then(callback);
+}
+
+module.exports.GetPlayerAchievements = function(steamid, appid, format, callback) {
+  if (typeof(format) === 'function') {
+    callback = format;
+    format = 'JSON';
+  }
+
+  url += 'GetPlayerAchievements/v0001'
+    + '?steamid=' + steamid
+    + '&appid=' + appid
+    + '&format=' + format
+    + '&key=' + process.env.STEAM_API_KEY;
+
+  call(url)
+
+  .then(callback);
+}
+
+module.exports.GetUserStatsForGame = function(steamid, appid, format, callback) {
+  if (typeof(format) === 'function') {
+    callback = format;
+    format = 'JSON';
+  }
+
+  url += 'GetUserStatsForGame/v0002/'
+    + '?steamid=' + steamid
+    + '&appid=' + appid
+    + '&format=' + format
+    + '&key=' + process.env.STEAM_API_KEY;
+
+    call(url)
+
+    .then(callback);
+}
+
+module.exports.GetSchemaForGame = function(appid, format, callback) {
+    if (typeof(format) === 'function') {
+    callback = format;
+    format = 'JSON';
+  }
+
+  url += 'GetSchemaForGame/v2/'
+    + '?appid=' + appid
+    + '&format=' + format
+    + '&key=' + process.env.STEAM_API_KEY;
+
+    call(url)
+
+    .then(callback);
 }

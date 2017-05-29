@@ -6,6 +6,9 @@ module.exports.SetKey = require('./src/init');
 
 module.exports.GetGlobalStatsForGame = ISteamUserStats.GetGlobalStatsForGame;
 module.exports.GetGlobalAchievementPercentagesForApp = ISteamUserStats.GetGlobalAchievementPercentagesForApp;
+module.exports.GetPlayerAchievements = ISteamUserStats.GetPlayerAchievements;
+module.exports.GetUserStatsForGame = ISteamUserStats.GetUserStatsForGame;
+module.exports.GetSchemaForGame = ISteamUserStats.GetSchemaForGame;
 
 module.exports.GetNewsForApp = ISteamNews.GetNewsForApp;
 

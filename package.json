@@ -1,6 +1,6 @@
 {
   "name": "steamwrap",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Steam API wrapper for Node.js",
   "main": "index.js",
   "dependencies": {
