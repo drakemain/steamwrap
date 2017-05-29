@@ -3,6 +3,8 @@ A Steam API wrapper for Node.js.
 
 
 # Setup
+`npm install steamwrap`
+
 ```javascript
 var Steamwrap = require('steamwrap');
 ```
