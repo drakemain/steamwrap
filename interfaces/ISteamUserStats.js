@@ -2,10 +2,9 @@ var call = require('../src/call');
 
 var url = 'https://api.steampowered.com/ISteamUserStats/';
 
-module.exports.GetGlobalStatsForGame = function(appid, format, statsArr, callback) {
-  if (typeof(statsArr) === 'function') {
-    callback = statsArr;
-    statsArr = format;
+module.exports.GetGlobalStatsForGame = function(appid, statsArr, format, callback) {
+  if (typeof(format) === 'function') {
+    callback = format;
     format = 'JSON';
   }
 
