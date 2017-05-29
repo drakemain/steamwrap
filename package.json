@@ -2,6 +2,11 @@
   "name": "steamwrap",
   "version": "0.1.3",
   "description": "Steam API wrapper for Node.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/drakemain/steamwrap"
+  },
+  "bugs": "http://github.com/drakemain/steamwrap/issues",
   "main": "index.js",
   "dependencies": {
     "request": "^2.81.0",
