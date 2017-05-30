@@ -58,3 +58,19 @@ module.exports.GetPlayerBans = function(steamidArray, callback) {
 
   .then(callback);
 }
+
+module.exports.ResolveVanityURL = function(vanityurl, format, callback) {
+  if (typeof(format) === 'function') {
+    callback = format;
+    format = 'JSON';
+  }
+
+  url += 'ResolveVanityURL/v0001'
+    + '?key=' + process.env.STEAM_API_KEY
+    + '&vanityurl=' + vanityurl
+    + '&format=' + format;
+
+  call(url)
+
+  .then(callback);
+}
