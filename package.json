@@ -1,6 +1,6 @@
 {
   "name": "steamwrap",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Steam API wrapper for Node.js",
   "repository": {
     "type": "git",
