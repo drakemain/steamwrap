@@ -13,9 +13,7 @@ module.exports.GetFriendList = function(steamid, format, callback) {
     + '&format=' + format
     + '&steamid=' + steamid;
 
-  call(url)
-
-  .then(callback);
+  return call(url);
 }
 
 module.exports.GetPlayerSummaries = function(steamidArray, format, callback) {
@@ -36,9 +34,7 @@ module.exports.GetPlayerSummaries = function(steamidArray, format, callback) {
     }
   }
 
-  call(url)
-
-  .then(callback);
+  return call(url);
 }
 
 module.exports.GetPlayerBans = function(steamidArray, callback) {
@@ -54,9 +50,7 @@ module.exports.GetPlayerBans = function(steamidArray, callback) {
     }
   }
 
-  call(url)
-
-  .then(callback);
+  return call(url);
 }
 
 module.exports.ResolveVanityURL = function(vanityurl, format, callback) {
@@ -70,7 +64,5 @@ module.exports.ResolveVanityURL = function(vanityurl, format, callback) {
     + '&vanityurl=' + vanityurl
     + '&format=' + format;
 
-  call(url)
-
-  .then(callback);
+  return call(url);
 }

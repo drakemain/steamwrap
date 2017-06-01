@@ -18,9 +18,7 @@ module.exports.GetGlobalStatsForGame = function(appid, statsArr, format, callbac
       + statsArr[i];
   }
 
-  call(url)
-
-  .then(callback);
+  return call(url);
 }
 
 module.exports.GetGlobalAchievementPercentagesForApp = function(appid, format, callback) {
@@ -33,9 +31,7 @@ module.exports.GetGlobalAchievementPercentagesForApp = function(appid, format, c
     + "?gameid=" + appid
     + "&format=" + format;
 
-  call(url)
-
-  .then(callback);
+  return call(url);
 }
 
 module.exports.GetPlayerAchievements = function(steamid, appid, format, callback) {
@@ -50,9 +46,7 @@ module.exports.GetPlayerAchievements = function(steamid, appid, format, callback
     + '&format=' + format
     + '&key=' + process.env.STEAM_API_KEY;
 
-  call(url)
-
-  .then(callback);
+  return call(url);
 }
 
 module.exports.GetUserStatsForGame = function(steamid, appid, format, callback) {
@@ -67,9 +61,7 @@ module.exports.GetUserStatsForGame = function(steamid, appid, format, callback) 
     + '&format=' + format
     + '&key=' + process.env.STEAM_API_KEY;
 
-    call(url)
-
-    .then(callback);
+  return call(url);
 }
 
 module.exports.GetSchemaForGame = function(appid, format, callback) {
@@ -83,7 +75,5 @@ module.exports.GetSchemaForGame = function(appid, format, callback) {
     + '&format=' + format
     + '&key=' + process.env.STEAM_API_KEY;
 
-    call(url)
-
-    .then(callback);
+  return call(url);
 }

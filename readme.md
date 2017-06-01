@@ -14,31 +14,41 @@ Many API calls (but not all) require a Steam API key. Make sure to use the SetKe
 `Steamwrap.SetKey(key)`
 
 
+# Usage
+
+Return data can be accessed by appending `.then()` to method calls and passing in a single parameter function. Errors can be handled using `.catch()`.
+
+```javascript
+Steamwrap.GetNewsForApp(220).then(function(data) {console.log(data);}).catch(function(err) {console.error(err);});
+```
+
+Note that return data is a string.
+
+[More information](http://bluebirdjs.com/docs/getting-started.html)
+
 # Methods
 
 The format parameter is optional for all methods. If ommited, JSON will be returned. Possible formats include JSON, xml, and VDF (Valve Data Fromat).
 
-The callback takes a single parameter for the return data.
-
 ## ISteamUserStats
 
-`GetGlobalStatsForGame(appid, statsArray, format, callback)`
+`GetGlobalStatsForGame(appid, statsArray, format)`
 
 ```
 statsArray is an array containing the names of achievements as defined in Steamworks.
 ```
 
-`GetGlobalAchievementPercentagesForApp(appid, format, callback)`
+`GetGlobalAchievementPercentagesForApp(appid, format)`
 
 `GetPlayerAchievements(steamid, appid, format)`
 
-`GetUserStatsForGame(steamid, appid, format, callback)`
+`GetUserStatsForGame(steamid, appid, format)`
 
-`GetSchemaForGame(appid, format, callback)`
+`GetSchemaForGame(appid, format)`
 
 ## ISteamNews
 
-`GetNewsForApp(appid, feedParameters, callback)`
+`GetNewsForApp(appid, feedParameters)`
 
 ```
 feedParameters is optional. It can include any of the following:
@@ -49,21 +59,21 @@ feedParameters is optional. It can include any of the following:
 
 ## ISteamUser
 
-`GetFriendList(steamid, format, callback)`
+`GetFriendList(steamid, format)`
 
-`GetPlayerSummaries(steamids, format, callback)`
-
-```
-steamids is an array of valid Steam IDs.
-```
-
-`GetPlayerBans(steamids, callback)`
+`GetPlayerSummaries(steamids, format)`
 
 ```
 steamids is an array of valid Steam IDs.
 ```
 
-`ResolveVanityURL(vanityurl, format, callback)`
+`GetPlayerBans(steamids)`
+
+```
+steamids is an array of valid Steam IDs.
+```
+
+`ResolveVanityURL(vanityurl, format)`
 
 ```
 Note that vanityurl is the customizable name at the end of a steam profile url. For example to get the Steam ID for the profile steamcommunity.com/id/robinwalker, you would pass in robinwalker for the vanityurl and not the url itself, despite the name of the parameter.
